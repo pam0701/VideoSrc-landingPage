@@ -1,0 +1,291 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Black+Ops+One&family=Cabin+Sketch&family=Fredericka+the+Great&family=Gantari&family=Gruppo&family=Nothing+You+Could+Do&family=Rubik+Moonrocks&family=Unica+One&display=swap");
+/* font-family: 'Architects Daughter', cursive;
+font-family: 'Black Ops One', cursive;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Gantari', sans-serif;
+font-family: 'Gruppo', cursive;
+font-family: 'Nothing You Could Do', cursive;
+font-family: 'Rubik Moonrocks', cursive;
+font-family: 'Unica One', cursive;*/
+
+/* RESET */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HEADER */
+header {
+  position: relative;
+  display: flex;
+  width: 100%; /* header는 항상 바디와 동일해야 함 */
+  border-bottom: 1px solid rgb(67, 66, 66);
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh 10vw;
+  z-index: 2;
+}
+
+header #snb {
+  display: none; /* 자기 자리 다 빼는 거임 */
+}
+
+header #snb .menu-trigger,
+header #snb .menu-trigger span {
+  display: inline-block;
+  transition: all 0.4s;
+  box-sizing: border-box;
+}
+
+header #snb .menu-trigger {
+  position: relative;
+  width: 40px;
+  height: 44px;
+}
+
+header #snb .menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+header #snb .menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+header #snb .menu-trigger span:nth-of-type(2) {
+  top: 20px;
+}
+
+header #snb .menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+/* 2th bar out 되고, 1st 3rd bar 회전하며 X */
+header #snb .menu-trigger.active span:nth-of-type(1) {
+  transform: translateY(20px) rotate(-45deg);
+}
+header #snb .menu-trigger.active span:nth-of-type(2) {
+  left: 50%;
+  opacity: 0;
+  animation: active-menu-bar05 0.8s forwards;
+}
+@keyframes active-menu-bar05 {
+  100% {
+    height: 0;
+  }
+}
+header #snb .menu-trigger.active span:nth-of-type(3) {
+  transform: translateY(-20px) rotate(45deg);
+}
+
+header .logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
+  height: 70px;
+  margin-left: 70px;
+}
+
+header .logo img {
+  width: 80px;
+  display: block;
+}
+
+header h1 a {
+  font: bold 26px/50px "Gantari";
+  color: #555;
+}
+
+/* HERDER */
+header #gnb {
+  display: flex;
+  position: relative;
+}
+header #gnb li {
+  margin: 0px 20px;
+}
+
+header #gnb li a {
+  font: 20px/1 "Gruppo";
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+}
+header #gnb li a:hover {
+  color: white;
+  border-bottom: 4px double rgba(10, 41, 39, 0.614);
+  background-color: rgba(52, 66, 103, 0.662);
+  padding: 50px 5px 50px 5px;
+  opacity: 0.7;
+}
+
+/* DROP-DOWN-MENU */
+header #gnb .dropdown {
+  position: relative;
+  display: block;
+}
+header #gnb .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+header #gnb .dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+header #gnb .dropdown .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+header #gnb .dropdown li a:hover .dropdown-content {
+  display: block;
+}
+
+/* HERDER의 돋보기 버튼, 이메일, 페이스북 로고  */
+header .sns {
+  display: flex;
+}
+
+header .sns li {
+  margin: 0px 10px;
+}
+
+header .sns li a {
+  font-size: 22px;
+  color: #333;
+}
+
+/* VIDEO */
+figure {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+figure video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+figure .text {
+  position: absolute;
+  left: 6vw;
+  top: 45%;
+  transform: translate(0, -50%);
+}
+figure .text p {
+  font: normal 4vw/1 "Nothing You Could Do";
+  color: rgb(218, 218, 218);
+}
+
+figure .text ul {
+  display: flex;
+  margin-top: 30px;
+}
+figure .text ul li {
+  margin: 0px 30px;
+}
+figure .text ul li i {
+  font-size: 20px;
+  color: rgb(218, 218, 218);
+  margin-right: 10px;
+}
+figure .text ul li strong {
+  font: 14px/1 "Unica One";
+  color: rgb(218, 218, 218);
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font: 12px/1 "arial";
+  color: #dadada;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 5vh 5vw;
+  z-index: 2;
+}
+
+/* SIMANTIC MOBILE */
+@media screen and (max-width: 800px) {
+  header #gnb {
+    display: none;
+  }
+
+  header .sns {
+    display: none;
+  }
+
+  header #snb {
+    display: block;
+    color: rgb(70, 67, 67);
+  }
+
+  header #snb .btn menu {
+    color: rgb(70, 67, 67);
+  }
+  figure .text p {
+    font-size: 11vw;
+  }
+}
+
+/* SUB */
+header #snb .sub_menu {
+  position: absolute;
+  padding: 10px 25px;
+  background-color: rgb(85, 94, 98);
+  border: 1px solid #999;
+  border-radius: 10px;
+  right: 5vw;
+  text-align: right;
+  opacity: 1;
+  transition: 0.4s;
+}
+
+header #snb .sub_menu.hide {
+  opacity: 0;
+}
+
+header #snb .sub_menu li {
+  padding: 10px 0px;
+  font: 16px/1 "Unica One";
+}
+header #snb .sub_menu li a {
+  color: #999;
+}
+header #snb .sub_menu li a i {
+  margin-left: 8px;
+}
